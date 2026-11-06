@@ -156,6 +156,18 @@ await check('submit posts name/allergies/details and reads PayBox from the sheet
   await ctx.close();
 });
 
+await check('a non-PayBox link from the sheet is ignored', async () => {
+  const { ctx, page } = await open({
+    scriptUrl: SCRIPT,
+    onScript: r => r.fulfill({ contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify({ paybox: 'https://evil.example.com/pay' }) }),
+  });
+  await page.waitForTimeout(800);
+  for (const href of await page.locator('.js-paybox').evaluateAll(ls => ls.map(l => l.href))) {
+    assert.equal(href, 'https://links.payboxapp.com/uVBBWkJYQ7b');
+  }
+  await ctx.close();
+});
+
 await check('network failure shows an error and keeps what was typed', async () => {
   const { ctx, page } = await open({
     scriptUrl: SCRIPT,

@@ -42,15 +42,22 @@
   }
   if (cfg.paybox) setPaybox(cfg.paybox);
 
+  // Only accept PayBox links from the sheet, so an edited cell can't send
+  // gift money anywhere else.
+  function isPayboxUrl(value) {
+    try {
+      var u = new URL(value);
+      return u.protocol === 'https:' && /(^|\.)payboxapp\.com$/.test(u.hostname);
+    } catch (e) { return false; }
+  }
+
   if (cfg.scriptUrl && window.fetch) {
     var ctrl = window.AbortController ? new AbortController() : null;
     if (ctrl) setTimeout(function () { ctrl.abort(); }, 5000);
     fetch(cfg.scriptUrl + '?action=config', ctrl ? { signal: ctrl.signal } : {})
       .then(function (r) { return r.json(); })
       .then(function (data) {
-        if (data && typeof data.paybox === 'string' && /^https:\/\//.test(data.paybox)) {
-          setPaybox(data.paybox);
-        }
+        if (data && isPayboxUrl(data.paybox)) setPaybox(data.paybox);
       })
       .catch(function () { /* keep the built-in link */ });
   }

@@ -13,7 +13,7 @@ One mobile-first page in Hebrew (RTL) that parents open from a WhatsApp link. It
 - אהבת ציון 7, פתח תקווה.
 - Sports activity run by an operator: parachute, Blazepod, sack race, walking buckets, balls, ropes, hoops, balance games, scooters.
 - PayBox: https://links.payboxapp.com/uVBBWkJYQ7b (may change later).
-- Sheet: https://docs.google.com/spreadsheets/d/1PzDd_2fbcnfIDzeQjZ7R2U774Yq-1ws-CXVjym9-agQ/edit
+- Sheet: Edkis's private Google Sheet (link kept out of this public repo).
 
 ## Page sections (top to bottom)
 
