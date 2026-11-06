@@ -23,7 +23,7 @@ const browser = await chromium.launch();
 const ctx = await browser.newContext({ viewport: { width: 402, height: 874 }, deviceScaleFactor: 2, locale: 'he-IL' });
 const page = await ctx.newPage();
 // Preview mode: never write screenshot submissions to the real sheet.
-await page.route('**/config.js', r => r.fulfill({ contentType: 'text/javascript', body: fs.readFileSync(path.join(root, 'config.js'), 'utf8').replace(/scriptUrl: '[^']*'/, "scriptUrl: ''") }));
+await page.route(/\/config\.js(\?|$)/, r => r.fulfill({ contentType: 'text/javascript', body: fs.readFileSync(path.join(root, 'config.js'), 'utf8').replace(/scriptUrl: '[^']*'/, "scriptUrl: ''") }));
 await page.route(/maps\.google\.com/, r => r.fulfill({ contentType: 'text/html', body: '<body style="margin:0;display:grid;place-items:center;height:100vh;background:#e8eef9;font:16px sans-serif;color:#4a5578">מפה</body>' }));
 await page.goto(`http://localhost:${port}/`, { waitUntil: 'networkidle' });
 await page.waitForTimeout(2000);
