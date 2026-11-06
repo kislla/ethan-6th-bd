@@ -33,12 +33,11 @@ async function open({ width = 390, height = 844, scriptUrl = '', onScript } = {}
   const page = await ctx.newPage();
   await page.route(/maps\.google\.com/, r => r.fulfill({ contentType: 'text/html', body: '<p>map</p>' }));
   await page.route(/fonts\.(googleapis|gstatic)\.com/, r => r.abort());
-  if (scriptUrl) {
-    await page.route('**/config.js', async r => {
-      const src = fs.readFileSync(path.join(root, 'config.js'), 'utf8').replace("scriptUrl: ''", `scriptUrl: '${scriptUrl}'`);
-      await r.fulfill({ contentType: 'text/javascript', body: src });
-    });
-  }
+  // Never hit the real script from tests: use the given URL, or preview mode.
+  await page.route('**/config.js', async r => {
+    const src = fs.readFileSync(path.join(root, 'config.js'), 'utf8').replace(/scriptUrl: '[^']*'/, `scriptUrl: '${scriptUrl}'`);
+    await r.fulfill({ contentType: 'text/javascript', body: src });
+  });
   if (onScript) await page.route(/script\.google\.com/, onScript);
   await page.goto(base);
   return { ctx, page };
