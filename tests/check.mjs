@@ -64,6 +64,24 @@ await check('all sections, RTL and countdown present', async () => {
   await ctx.close();
 });
 
+await check('hero buttons visible on first screen (iPhone Safari sizes)', async () => {
+  for (const [w, h] of [[402, 720], [390, 664], [375, 553]]) {
+    const { ctx, page } = await open({ width: w, height: h });
+    const box = await page.locator('.hero-actions').boundingBox();
+    assert.ok(box.y + box.height <= h, `${w}x${h}: buttons end at ${Math.round(box.y + box.height)}`);
+    assert.ok(await page.isVisible('.hero-actions .js-paybox'));
+    await ctx.close();
+  }
+});
+
+await check('countdown reads like a clock: days on the left, seconds on the right', async () => {
+  const { ctx, page } = await open();
+  const d = await page.locator('[data-unit="d"]').boundingBox();
+  const s = await page.locator('[data-unit="s"]').boundingBox();
+  assert.ok(d.x < s.x, `days x=${d.x}, seconds x=${s.x}`);
+  await ctx.close();
+});
+
 await check('PayBox link falls back to the built-in link', async () => {
   const { ctx, page } = await open();
   assert.equal(await page.getAttribute('#paybox-link', 'href'), 'https://links.payboxapp.com/uVBBWkJYQ7b');
@@ -122,7 +140,8 @@ await check('submit posts name/allergies/details and reads PayBox from the sheet
       return r.fulfill({ contentType: 'application/json', body: '{"ok":true}' });
     },
   });
-  await page.waitForFunction(() => document.getElementById('paybox-link').href.includes('NEWLINK'));
+  await page.waitForFunction(() => [...document.querySelectorAll('.js-paybox')].every(l => l.href.includes('NEWLINK')));
+  assert.equal(await page.locator('.js-paybox').count(), 2);
   await page.fill('#child-name', 'מאיה כהן');
   await page.click('.toggle label:has-text("כן")');
   await page.fill('#allergy-details', 'אגוזים');

@@ -89,12 +89,13 @@ img { max-width: 100%; display: block; }
   line-height: .95;
   font-weight: 900;
   transform: skewX(10deg);
+  transform-origin: right bottom;
   animation: zoom-in .7s cubic-bezier(.2,.9,.3,1.2) both;
 }
 
 .title-name {
   display: block;
-  font-size: clamp(64px, 21vw, 104px);
+  font-size: clamp(54px, 16vw, 78px);
   letter-spacing: -1px;
   background: linear-gradient(180deg, #fff 0%, #ffe9b8 55%, var(--yellow) 100%);
   -webkit-background-clip: text;
@@ -106,7 +107,7 @@ img { max-width: 100%; display: block; }
 .title-age {
   display: block;
   margin-top: 4px;
-  font-size: clamp(40px, 12vw, 58px);
+  font-size: clamp(32px, 9.5vw, 46px);
   color: var(--orange-2);
   text-shadow: 0 3px 0 var(--navy), 0 0 22px rgba(255,107,0,.45);
 }
@@ -123,10 +124,19 @@ img { max-width: 100%; display: block; }
   filter: drop-shadow(0 3px 0 var(--navy));
 }
 
+.hero-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.hero-head { text-align: right; }
+
 .hero-photo {
   position: relative;
-  margin: 22px auto 0;
-  width: min(78%, 330px);
+  margin: 8px 6px 0 4px;
   transform: rotate(-2deg);
   animation: slide-up .8s .15s cubic-bezier(.2,.9,.3,1) both;
 }
@@ -137,37 +147,37 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 20px;
-  border: 5px solid #fff;
-  box-shadow: 0 0 0 5px var(--orange), 0 18px 40px rgba(0,0,0,.45);
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 4px var(--orange), 0 14px 30px rgba(0,0,0,.45);
 }
 
 .roundel {
   position: absolute;
-  top: -16px;
-  left: -14px;
-  width: 64px;
-  height: 64px;
+  top: -12px;
+  left: -10px;
+  width: 46px;
+  height: 46px;
   display: grid;
   place-items: center;
-  font-size: 38px;
+  font-size: 27px;
   font-weight: 900;
   color: var(--blue);
   background: #fff;
-  border: 5px solid var(--blue);
+  border: 4px solid var(--blue);
   border-radius: 50%;
-  box-shadow: 0 0 0 4px var(--orange), 0 8px 18px rgba(0,0,0,.35);
+  box-shadow: 0 0 0 3px var(--orange), 0 6px 14px rgba(0,0,0,.35);
   transform: rotate(-8deg);
 }
 
 .hero-text {
-  margin: 22px auto 0;
-  max-width: 22em;
-  font-size: 19px;
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.45;
   font-weight: 500;
   color: #e6edff;
 }
 
-.countdown { margin-top: 20px; }
+.countdown { margin-top: 18px; }
 
 .countdown-label {
   margin: 0 0 8px;
@@ -183,11 +193,11 @@ img { max-width: 100%; display: block; }
   gap: 8px;
   max-width: 360px;
   margin: 0 auto;
-  direction: rtl;
+  direction: ltr; /* read like a clock: days on the left, seconds on the right */
 }
 
 .cd-cell {
-  padding: 10px 0 8px;
+  padding: 8px 0 6px;
   background: #071440;
   border: 2px solid rgba(255,138,31,.55);
   border-radius: 12px;
@@ -196,7 +206,7 @@ img { max-width: 100%; display: block; }
 
 .cd-num {
   display: block;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 800;
   line-height: 1;
   color: var(--orange-2);
@@ -217,12 +227,23 @@ img { max-width: 100%; display: block; }
   color: var(--yellow);
 }
 
-.hero-cta { margin-top: 22px; }
+.hero-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-width: 360px;
+  margin: 16px auto 0;
+}
+
+.hero-actions .btn {
+  padding: 12px 8px;
+  font-size: 16px;
+}
 
 .hero-road {
   position: relative;
   height: 96px;
-  margin: 18px -16px 0;
+  margin: 10px -16px 0;
 }
 
 .flames {
@@ -432,6 +453,14 @@ textarea:focus-visible {
   box-shadow: inset 0 0 0 2px var(--line), 0 2px 0 var(--line);
 }
 
+.btn-gift {
+  color: var(--navy);
+  background: var(--yellow);
+  box-shadow: 0 4px 0 #c99a00, 0 10px 20px rgba(255,210,63,.25);
+}
+
+.btn-gift:active { box-shadow: 0 2px 0 #c99a00; }
+
 .btn-waze {
   color: #fff;
   background: #1e9ee8;
@@ -593,13 +622,10 @@ textarea { resize: vertical; min-height: 64px; }
 /* ---------- Gift ---------- */
 
 .card-gift {
-  text-align: center;
   background:
     radial-gradient(240px 140px at 50% 0%, #fff1df, transparent 70%),
     var(--card);
 }
-
-.card-gift h2 { transform-origin: center; }
 
 /* ---------- Map ---------- */
 

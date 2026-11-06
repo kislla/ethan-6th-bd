@@ -36,8 +36,11 @@
 
   /* ---------- PayBox link (editable from the sheet) ---------- */
 
-  var payLink = document.getElementById('paybox-link');
-  if (cfg.paybox) payLink.href = cfg.paybox;
+  var payLinks = document.querySelectorAll('.js-paybox');
+  function setPaybox(url) {
+    payLinks.forEach(function (a) { a.href = url; });
+  }
+  if (cfg.paybox) setPaybox(cfg.paybox);
 
   if (cfg.scriptUrl && window.fetch) {
     var ctrl = window.AbortController ? new AbortController() : null;
@@ -46,7 +49,7 @@
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (data && typeof data.paybox === 'string' && /^https:\/\//.test(data.paybox)) {
-          payLink.href = data.paybox;
+          setPaybox(data.paybox);
         }
       })
       .catch(function () { /* keep the built-in link */ });

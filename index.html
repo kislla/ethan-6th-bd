@@ -61,17 +61,20 @@
   <header class="hero">
     <div class="speed" aria-hidden="true"></div>
     <p class="kicker">🏁 הזמנה למרוץ יום ההולדת</p>
-    <h1 class="title">
-      <span class="title-name">איתן</span>
-      <span class="title-age">בן <b>6</b>!</span>
-    </h1>
 
-    <figure class="hero-photo">
-      <img src="assets/ethan-hero.jpg" width="678" height="848" alt="איתן בחליפת נהג מירוצים כחולה-כתומה, מחזיק קסדה">
-      <span class="roundel" aria-hidden="true">6</span>
-    </figure>
-
-    <p class="hero-text">חגרו חגורות! אני חוגג 6 ומזמין אתכם למרוץ הכי כיפי של השנה</p>
+    <div class="hero-top">
+      <div class="hero-head">
+        <h1 class="title">
+          <span class="title-name">איתן</span>
+          <span class="title-age">בן <b>6</b>!</span>
+        </h1>
+        <p class="hero-text">חגרו חגורות! אני חוגג 6 ומזמין אתכם למרוץ הכי כיפי של השנה</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/ethan-hero.jpg" width="678" height="848" alt="איתן בחליפת נהג מירוצים כחולה-כתומה, מחזיק קסדה">
+        <span class="roundel" aria-hidden="true">6</span>
+      </figure>
+    </div>
 
     <div class="countdown" role="timer" aria-live="off">
       <p class="countdown-label" id="cd-label">המרוץ מתחיל בעוד</p>
@@ -83,7 +86,10 @@
       </div>
     </div>
 
-    <a class="btn btn-primary hero-cta" href="#rsvp">לאישור הגעה</a>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#rsvp">לאישור הגעה</a>
+      <a class="btn btn-gift js-paybox" href="https://links.payboxapp.com/uVBBWkJYQ7b" target="_blank" rel="noopener">🎁 מתנה בפייבוקס</a>
+    </div>
 
     <div class="hero-road" aria-hidden="true">
       <div class="flames"></div>
@@ -124,7 +130,7 @@
         <li><span aria-hidden="true">⚽</span>כדורים</li>
         <li><span aria-hidden="true">🤸</span>שיווי משקל</li>
       </ul>
-      <p class="tip"><span aria-hidden="true">👟</span> כדאי להגיע בבגדים ובנעליים נוחים, יהיה הרבה ריצה וקפיצה!</p>
+      <p class="tip"><span aria-hidden="true">👟</span> כדאי להגיע בבגדי ספורט. נקפוץ ונרוץ הרבה</p>
     </section>
 
     <div class="track track-flip" aria-hidden="true"><svg class="track-loop"><use href="#loop"/></svg></div>
@@ -135,7 +141,7 @@
       </figure>
       <p class="lap">הקפה 3</p>
       <h2 id="rsvp-h">מגיעים למרוץ?</h2>
-      <p>ממלאים את הטופס לכל ילד שמגיע. אחים? פשוט שולחים שוב.</p>
+      <p>ממלאים את הטופס עבור ילד שמגיע. מגיעים עם האחים? תשלחו שוב את הטופס עבור כל משתתף!</p>
 
       <form id="rsvp-form" novalidate>
         <div class="field">
@@ -179,8 +185,8 @@
     <section class="card card-gift" id="gift" aria-labelledby="gift-h">
       <p class="lap">הקפה 4</p>
       <h2 id="gift-h">מתנה לנהג</h2>
-      <p>רוצים לפנק את איתן? אפשר להעביר מתנה בקלות בפייבוקס.</p>
-      <a class="btn btn-primary btn-wide" id="paybox-link" href="https://links.payboxapp.com/uVBBWkJYQ7b" target="_blank" rel="noopener">🎁 להעברה בפייבוקס</a>
+      <p>רוצים להעביר לאיתן מתנה בפייבוקס? הוא חוסך לטסלה מעופפת!</p>
+      <a class="btn btn-primary btn-wide js-paybox" id="paybox-link" href="https://links.payboxapp.com/uVBBWkJYQ7b" target="_blank" rel="noopener">🎁 להעברה בפייבוקס</a>
     </section>
 
     <div class="track track-flip" aria-hidden="true"><svg class="track-loop"><use href="#loop"/></svg></div>
