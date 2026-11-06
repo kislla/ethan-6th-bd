@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0a1f5c">
+  <title>איתן בן 6! 🏁</title>
+  <meta name="description" content="הזמנה למרוץ יום ההולדת של איתן · יום שלישי 17.11 בשעה 17:00 · אישור הגעה כאן">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:title" content="איתן בן 6! 🏁 הזמנה למרוץ יום ההולדת">
+  <meta property="og:description" content="יום שלישי 17.11 בשעה 17:00 · אהבת ציון 7, פתח תקווה · לאישור הגעה לחצו כאן">
+  <meta property="og:image" content="assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏁</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g-flame" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#ffd23f"/>
+      <stop offset=".45" stop-color="#ff8a1f"/>
+      <stop offset="1" stop-color="#e8291c"/>
+    </linearGradient>
+    <linearGradient id="g-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9a3c"/>
+      <stop offset="1" stop-color="#ff5a00"/>
+    </linearGradient>
+    <symbol id="car" viewBox="0 0 124 46">
+      <ellipse cx="62" cy="43" rx="54" ry="3" fill="rgba(0,0,0,.25)"/>
+      <path d="M6 31 Q6 25 16 24 L36 21 Q46 12 58 11 L76 11 Q86 12 94 19 L106 21 L108 14 L118 14 L118 31 Q118 36 113 36 L11 36 Q6 36 6 31 Z" fill="url(#g-body)" stroke="#0a1f5c" stroke-width="1.5"/>
+      <path d="M40 21 Q48 14.5 58 14.5 L74 14.5 Q82 15 88 21 Z" fill="#12307e"/>
+      <path d="M63 14.5 L63 21" stroke="#ff8a1f" stroke-width="2"/>
+      <path d="M10 29 L44 29 Q50 25.5 58 26.5 Q52 28 60 29.5 Q54 31 62 32.5 L10 32.5 Z" fill="#1340b8"/>
+      <circle cx="80" cy="28" r="6" fill="#fff" stroke="#1340b8" stroke-width="1.5"/>
+      <text x="80" y="31.4" text-anchor="middle" font-family="Rubik, sans-serif" font-weight="900" font-size="9" fill="#1340b8">6</text>
+      <circle cx="30" cy="36" r="8" fill="#14161c"/><circle cx="30" cy="36" r="3.6" fill="#c9ced8"/>
+      <circle cx="94" cy="36" r="8" fill="#14161c"/><circle cx="94" cy="36" r="3.6" fill="#c9ced8"/>
+    </symbol>
+    <symbol id="loop" viewBox="0 0 64 64">
+      <circle cx="32" cy="30" r="24" fill="none" stroke="#c94a00" stroke-width="11"/>
+      <circle cx="32" cy="30" r="24" fill="none" stroke="#ff7a12" stroke-width="8"/>
+      <circle cx="32" cy="30" r="24" fill="none" stroke="#ffb066" stroke-width="1.5" stroke-dasharray="4 5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="page">
+
+  <header class="hero">
+    <div class="speed" aria-hidden="true"></div>
+    <p class="kicker">🏁 הזמנה למרוץ יום ההולדת</p>
+    <h1 class="title">
+      <span class="title-name">איתן</span>
+      <span class="title-age">בן <b>6</b>!</span>
+    </h1>
+
+    <figure class="hero-photo">
+      <img src="assets/ethan-hero.jpg" width="678" height="848" alt="איתן בחליפת נהג מירוצים כחולה-כתומה, מחזיק קסדה">
+      <span class="roundel" aria-hidden="true">6</span>
+    </figure>
+
+    <p class="hero-text">חגרו חגורות! אני חוגג 6 ומזמין אתכם למרוץ הכי כיפי של השנה</p>
+
+    <div class="countdown" role="timer" aria-live="off">
+      <p class="countdown-label" id="cd-label">המרוץ מתחיל בעוד</p>
+      <div class="countdown-board" id="cd-board">
+        <div class="cd-cell"><span class="cd-num" data-unit="d">--</span><span class="cd-unit">ימים</span></div>
+        <div class="cd-cell"><span class="cd-num" data-unit="h">--</span><span class="cd-unit">שעות</span></div>
+        <div class="cd-cell"><span class="cd-num" data-unit="m">--</span><span class="cd-unit">דקות</span></div>
+        <div class="cd-cell"><span class="cd-num" data-unit="s">--</span><span class="cd-unit">שניות</span></div>
+      </div>
+    </div>
+
+    <a class="btn btn-primary hero-cta" href="#rsvp">לאישור הגעה</a>
+
+    <div class="hero-road" aria-hidden="true">
+      <div class="flames"></div>
+      <svg class="hero-car"><use href="#car"/></svg>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="card" id="details" aria-labelledby="details-h">
+      <p class="lap">הקפה 1</p>
+      <h2 id="details-h">פרטי המרוץ</h2>
+      <ul class="facts">
+        <li><span class="fact-icon" aria-hidden="true">📅</span><span><b>יום שלישי</b> 17.11.2026</span></li>
+        <li><span class="fact-icon" aria-hidden="true">⏰</span><span>קו הזינוק בשעה <b>17:00</b></span></li>
+        <li><span class="fact-icon" aria-hidden="true">📍</span><span><b>אהבת ציון 7</b>, פתח תקווה</span></li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%95%D7%9D%20%D7%94%D7%94%D7%95%D7%9C%D7%93%D7%AA%20%D7%A9%D7%9C%20%D7%90%D7%99%D7%AA%D7%9F%20%F0%9F%8F%81&amp;dates=20261117T170000/20261117T190000&amp;ctz=Asia/Jerusalem&amp;location=%D7%90%D7%94%D7%91%D7%AA%20%D7%A6%D7%99%D7%95%D7%9F%207%2C%20%D7%A4%D7%AA%D7%97%20%D7%AA%D7%A7%D7%95%D7%95%D7%94&amp;details=%D7%90%D7%99%D7%AA%D7%9F%20%D7%97%D7%95%D7%92%D7%92%206%21%20%D7%94%D7%A4%D7%A2%D7%9C%D7%94%20%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%99%D7%91%D7%99%D7%AA%2C%20%D7%AA%D7%97%D7%A8%D7%95%D7%99%D7%95%D7%AA%20%D7%95%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D.">ליומן גוגל</a>
+        <a class="btn btn-ghost" href="ethan-6.ics" download>ליומן אייפון</a>
+      </div>
+    </section>
+
+    <div class="track" aria-hidden="true"><svg class="track-loop"><use href="#loop"/></svg></div>
+
+    <section class="card" id="fun" aria-labelledby="fun-h">
+      <p class="lap">הקפה 2</p>
+      <h2 id="fun-h">מה מחכה לנהגים</h2>
+      <p>הפעלה ספורטיבית לכל הקבוצה, עם איתן במרכז: תחרויות, משימות בקבוצות ומשחקים מאתגרים, מצחיקים ומקפיצים.</p>
+      <ul class="chips">
+        <li><span aria-hidden="true">🪂</span>מצנח</li>
+        <li><span aria-hidden="true">⚡</span>בלייזפוד</li>
+        <li><span aria-hidden="true">🦘</span>קפיצה בשקים</li>
+        <li><span aria-hidden="true">🪣</span>דליי הליכה</li>
+        <li><span aria-hidden="true">🛹</span>סקייטרים</li>
+        <li><span aria-hidden="true">⭕</span>חישוקים</li>
+        <li><span aria-hidden="true">🪢</span>חבלים</li>
+        <li><span aria-hidden="true">⚽</span>כדורים</li>
+        <li><span aria-hidden="true">🤸</span>שיווי משקל</li>
+      </ul>
+      <p class="tip"><span aria-hidden="true">👟</span> כדאי להגיע בבגדים ובנעליים נוחים, יהיה הרבה ריצה וקפיצה!</p>
+    </section>
+
+    <div class="track track-flip" aria-hidden="true"><svg class="track-loop"><use href="#loop"/></svg></div>
+
+    <section class="card card-rsvp" id="rsvp" aria-labelledby="rsvp-h">
+      <figure class="rsvp-photo">
+        <img src="assets/ethan-pit.jpg" width="678" height="848" loading="lazy" alt="איתן כורע ליד מכונית מירוץ לבנה, מחזיק קסדה עם להבות">
+      </figure>
+      <p class="lap">הקפה 3</p>
+      <h2 id="rsvp-h">מגיעים למרוץ?</h2>
+      <p>ממלאים את הטופס לכל ילד שמגיע. אחים? פשוט שולחים שוב.</p>
+
+      <form id="rsvp-form" novalidate>
+        <div class="field">
+          <label for="child-name">שם הילד או הילדה</label>
+          <input id="child-name" name="name" type="text" maxlength="80" autocomplete="off" enterkeyhint="next" required aria-describedby="name-error">
+          <p class="field-error" id="name-error" hidden>נא למלא את שם הילד או הילדה</p>
+        </div>
+
+        <fieldset class="field">
+          <legend>יש אלרגיות?</legend>
+          <div class="toggle">
+            <label><input type="radio" name="allergies" value="no" required><span>לא</span></label>
+            <label><input type="radio" name="allergies" value="yes"><span>כן</span></label>
+          </div>
+          <p class="field-error" id="allergies-error" hidden>נא לבחור כן או לא</p>
+        </fieldset>
+
+        <div class="field" id="details-field" hidden>
+          <label for="allergy-details">לאיזה מזון או חומר?</label>
+          <textarea id="allergy-details" name="details" rows="2" maxlength="300" placeholder="למשל: בוטנים, ביצים, חלב"></textarea>
+        </div>
+
+        <button class="btn btn-primary btn-submit" type="submit">
+          <span class="btn-label">אנחנו באים למרוץ! 🏁</span>
+          <span class="btn-sending" hidden>שולחים…</span>
+        </button>
+        <p class="form-error" id="form-error" role="alert" hidden>אופס, השליחה לא הצליחה. בדקו את החיבור לאינטרנט ונסו שוב.</p>
+      </form>
+
+      <div class="rsvp-done" id="rsvp-done" hidden tabindex="-1">
+        <div class="checker" aria-hidden="true"></div>
+        <p class="done-title"><span id="done-name"></span> בפנים! 🏆</p>
+        <p>נתראה בקו הזינוק ביום שלישי בשעה 17:00</p>
+        <p class="preview-note" id="preview-note" hidden>מצב תצוגה מקדימה: האישור לא נשמר בטבלה</p>
+        <button class="btn btn-ghost" type="button" id="rsvp-again">אישור לילד נוסף</button>
+      </div>
+    </section>
+
+    <div class="track" aria-hidden="true"><svg class="track-loop"><use href="#loop"/></svg></div>
+
+    <section class="card card-gift" id="gift" aria-labelledby="gift-h">
+      <p class="lap">הקפה 4</p>
+      <h2 id="gift-h">מתנה לנהג</h2>
+      <p>רוצים לפנק את איתן? אפשר להעביר מתנה בקלות בפייבוקס.</p>
+      <a class="btn btn-primary btn-wide" id="paybox-link" href="https://links.payboxapp.com/uVBBWkJYQ7b" target="_blank" rel="noopener">🎁 להעברה בפייבוקס</a>
+    </section>
+
+    <div class="track track-flip" aria-hidden="true"><svg class="track-loop"><use href="#loop"/></svg></div>
+
+    <section class="card" id="map" aria-labelledby="map-h">
+      <p class="lap">הקפה 5</p>
+      <h2 id="map-h">איך מגיעים לפיט</h2>
+      <p class="address"><span aria-hidden="true">📍</span> אהבת ציון 7, פתח תקווה</p>
+      <div class="map-frame">
+        <iframe title="מפה: אהבת ציון 7, פתח תקווה" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=%D7%90%D7%94%D7%91%D7%AA%20%D7%A6%D7%99%D7%95%D7%9F%207%2C%20%D7%A4%D7%AA%D7%97%20%D7%AA%D7%A7%D7%95%D7%95%D7%94&amp;z=16&amp;hl=iw&amp;output=embed"></iframe>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-waze" target="_blank" rel="noopener" href="https://waze.com/ul?q=%D7%90%D7%94%D7%91%D7%AA%20%D7%A6%D7%99%D7%95%D7%9F%207%2C%20%D7%A4%D7%AA%D7%97%20%D7%AA%D7%A7%D7%95%D7%95%D7%94&amp;navigate=yes">ניווט ב-Waze</a>
+        <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=%D7%90%D7%94%D7%91%D7%AA%20%D7%A6%D7%99%D7%95%D7%9F%207%2C%20%D7%A4%D7%AA%D7%97%20%D7%AA%D7%A7%D7%95%D7%95%D7%94">Google Maps</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="checker" aria-hidden="true"></div>
+    <p class="footer-title">מחכים לכם בקו הזינוק!</p>
+    <p>איתן והמשפחה</p>
+  </footer>
+
+</div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
